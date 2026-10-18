@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Send the browser to its own language, unless one was picked by hand (see the end of the page).
+    (() => {
+      const langs = ["es"];
+      let lang = null;
+      try { lang = localStorage.getItem('lang'); } catch {}
+      if (!lang) lang = (navigator.languages || [navigator.language]).map((l) => (l || '').slice(0, 2).toLowerCase())
+        .find((l) => l === 'en' || langs.includes(l));
+      if (langs.includes(lang)) location.replace(lang + '/' + location.pathname.split('/').pop() + location.search + location.hash);
+    })();
+  </script>
+  <title>Terms of service · Pipas English</title>
+  <meta name="description" content="Terms of use of the Pipas English app.">
+  <meta name="theme-color" content="#8f570c">
+  <meta property="og:title" content="Terms of service · Pipas English">
+  <meta property="og:description" content="Terms of use of the Pipas English app.">
+  <meta property="og:image" content="https://pipasenglish.lamaltesa.dev/icon-512.png">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://pipasenglish.lamaltesa.dev/condiciones.html">
+  <link rel="alternate" hreflang="es" href="https://pipasenglish.lamaltesa.dev/es/condiciones.html">
+  <link rel="alternate" hreflang="x-default" href="https://pipasenglish.lamaltesa.dev/condiciones.html">
+  <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="logo-mark.svg" alt="" width="36" height="36">
+      <span>Pipas English</span>
+    </a>
+    <div class="topbar-end">
+      
+      <details class="lang">
+        <summary aria-label="Language">🌐 EN</summary>
+        <ul><li><a href="condiciones.html" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a></li><li><a href="es/condiciones.html" hreflang="es" lang="es" data-lang="es">Español</a></li></ul>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal">
+      <h1>Terms of service</h1>
+      <p class="updated">Last updated: 18 October 2026 · This is a translation; if in doubt, the
+      <a href="es/condiciones.html">Spanish version</a> prevails.</p>
+
+      <p>These terms govern the use of Pipas English, an English practice app offered by Fernando Munguía Hoyo
+      (Cantabria, Spain; <a href="mailto:info@lamaltesa.dev">info@lamaltesa.dev</a>). By using it you accept them.</p>
+
+      <h2>The service</h2>
+      <p>Pipas English offers English vocabulary and grammar exercises aimed at certification exams and saves your progress.
+      During launch it is free for all users; in the future it may include an optional subscription, and you will be told in the app beforehand.
+      The service may change, improve or stop being offered; if it stops, you will be given reasonable notice.</p>
+
+      <h2>Your account</h2>
+      <p>You sign in with your Google account or your e-mail, and you are responsible for what is done with it. You can delete your account whenever you want from the app.</p>
+
+      <h2>Acceptable use</h2>
+      <ul>
+        <li>Do not use the app for anything illegal, to try to access other people's data, or to overload or attack the service.</li>
+        <li>Do not mass-copy or redistribute the app's questions and explanations.</li>
+      </ul>
+      <p>Accounts that break these rules may be suspended.</p>
+
+      <h2>Content and official exams</h2>
+      <p>The questions are original, written in the format and style of the exams, and may contain mistakes. Pipas English is independent practice material:
+      it is <b>not affiliated with or endorsed by</b> Cambridge, EOI, Aptis, Linguaskill, TOEFL, IELTS or their organisations,
+      and it does not guarantee you will pass any exam.</p>
+
+      <h2>No warranties and liability</h2>
+      <p>The app is provided “as is”. To the extent permitted by law, no liability is accepted for damage arising from errors in the content, data loss or service interruptions.
+      None of this limits your rights under consumer law.</p>
+
+      <h2>Privacy</h2>
+      <p>How your data is processed is explained in the <a href="privacidad.html">privacy policy</a>.</p>
+
+      <h2>Changes and governing law</h2>
+      <p>These terms may be updated; the version in force is always the one published here, with its date. They are governed by Spanish law.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Made with love in Cantabria by Fernando Munguía Hoyo.</p>
+    <p>
+      <a href="https://ko-fi.com/fernandomunguia">Buy me a Ko-fi ☕</a>
+      · <a href="https://github.com/cmaltes">GitHub</a>
+    </p>
+    <p><a href="privacidad.html">Privacy</a> · <a href="condiciones.html">Terms</a> · <a href="borrar-cuenta.html">Delete account</a></p>
+  </footer>
+
+  <script>
+    // A language picked by hand wins over the browser's one from then on.
+    document.querySelectorAll('[data-lang]').forEach((link) =>
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('lang', link.dataset.lang); } catch {}
+      }),
+    );
+  </script>
+</body>
+</html>

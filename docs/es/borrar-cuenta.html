@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Borrar tu cuenta · Pipas English</title>
+  <meta name="description" content="Cómo borrar tu cuenta de Pipas English y todos tus datos, desde la app o por correo.">
+  <meta name="theme-color" content="#8f570c">
+  <meta property="og:title" content="Borrar tu cuenta · Pipas English">
+  <meta property="og:description" content="Cómo borrar tu cuenta de Pipas English y todos tus datos, desde la app o por correo.">
+  <meta property="og:image" content="https://pipasenglish.lamaltesa.dev/icon-512.png">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://pipasenglish.lamaltesa.dev/borrar-cuenta.html">
+  <link rel="alternate" hreflang="es" href="https://pipasenglish.lamaltesa.dev/es/borrar-cuenta.html">
+  <link rel="alternate" hreflang="x-default" href="https://pipasenglish.lamaltesa.dev/borrar-cuenta.html">
+  <link rel="icon" href="../logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="../logo-mark.svg" alt="" width="36" height="36">
+      <span>Pipas English</span>
+    </a>
+    <div class="topbar-end">
+      
+      <details class="lang">
+        <summary aria-label="Idioma">🌐 ES</summary>
+        <ul><li><a href="../borrar-cuenta.html" hreflang="en" lang="en" data-lang="en">English</a></li><li><a href="../es/borrar-cuenta.html" hreflang="es" lang="es" data-lang="es" aria-current="true">Español</a></li></ul>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal">
+      <h1>Borrar tu cuenta</h1>
+      <p class="updated">Pipas English, de Fernando Munguía Hoyo · Última actualización: 18 de octubre de 2026</p>
+
+      <p>Puedes borrar tu cuenta de Pipas English y todos tus datos cuando quieras, de dos formas.</p>
+
+      <h2>Desde la app</h2>
+      <ol>
+        <li>Abre Pipas English y entra con tu cuenta.</li>
+        <li>En la pantalla de inicio toca <b>Borrar mi cuenta</b> y confírmalo.</li>
+      </ol>
+      <p>Se borra en ese momento y se cierra la sesión.</p>
+
+      <h2>Sin la app, por correo</h2>
+      <p>Si ya no tienes la app instalada, escribe a
+      <a href="mailto:info@lamaltesa.dev?subject=Borrar%20mi%20cuenta%20de%20Pipas%20English">info@lamaltesa.dev</a>
+      desde el correo con el que entras en Pipas English, con el asunto «Borrar mi cuenta». Tu cuenta y tus datos se
+      borrarán en un plazo máximo de 30 días y recibirás una respuesta cuando esté hecho.</p>
+
+      <h2>Qué se borra</h2>
+      <ul>
+        <li>Tu cuenta: nombre, correo electrónico e identificador de usuario.</li>
+        <li>Tus preferencias (examen, nivel y temas), tus respuestas y tu nivel estimado por tema.</li>
+      </ul>
+      <p>No se guardan copias de tus datos después de borrarlos.</p>
+
+      <p>Más información en la <a href="privacidad.html">política de privacidad</a>.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Hecho con cariño en Cantabria por Fernando Munguía Hoyo.</p>
+    <p>
+      <a href="https://ko-fi.com/fernandomunguia">Invítame a un Ko-fi ☕</a>
+      · <a href="https://github.com/cmaltes">GitHub</a>
+    </p>
+    <p><a href="privacidad.html">Privacidad</a> · <a href="condiciones.html">Condiciones</a> · <a href="borrar-cuenta.html">Borrar cuenta</a></p>
+  </footer>
+
+  <script>
+    // A language picked by hand wins over the browser's one from then on.
+    document.querySelectorAll('[data-lang]').forEach((link) =>
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('lang', link.dataset.lang); } catch {}
+      }),
+    );
+  </script>
+</body>
+</html>

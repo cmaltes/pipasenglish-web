@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Send the browser to its own language, unless one was picked by hand (see the end of the page).
+    (() => {
+      const langs = ["es"];
+      let lang = null;
+      try { lang = localStorage.getItem('lang'); } catch {}
+      if (!lang) lang = (navigator.languages || [navigator.language]).map((l) => (l || '').slice(0, 2).toLowerCase())
+        .find((l) => l === 'en' || langs.includes(l));
+      if (langs.includes(lang)) location.replace(lang + '/' + location.pathname.split('/').pop() + location.search + location.hash);
+    })();
+  </script>
+  <title>Pipas English · Practise English for your exam</title>
+  <meta name="description" content="Pipas English trains the vocabulary and grammar of Cambridge, EOI, Aptis, Linguaskill, TOEFL and IELTS with exercises that adapt to your level.">
+  <meta name="theme-color" content="#8f570c">
+  <meta property="og:title" content="Pipas English · Practise English for your exam">
+  <meta property="og:description" content="Pipas English trains the vocabulary and grammar of Cambridge, EOI, Aptis, Linguaskill, TOEFL and IELTS with exercises that adapt to your level.">
+  <meta property="og:image" content="https://pipasenglish.lamaltesa.dev/icon-512.png">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://pipasenglish.lamaltesa.dev/">
+  <link rel="alternate" hreflang="es" href="https://pipasenglish.lamaltesa.dev/es/">
+  <link rel="alternate" hreflang="x-default" href="https://pipasenglish.lamaltesa.dev/">
+  <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="logo-mark.svg" alt="" width="36" height="36">
+      <span>Pipas English</span>
+    </a>
+    <div class="topbar-end">
+      <nav><a href="#como-funciona">How it works</a><a href="#funciones">Features</a><a class="button button-small" href="#descargar">Get it</a></nav>
+      <details class="lang">
+        <summary aria-label="Language">🌐 EN</summary>
+        <ul><li><a href="./" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a></li><li><a href="es/" hreflang="es" lang="es" data-lang="es">Español</a></li></ul>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">English for your exam, one bite at a time</p>
+        <h1>Practise the <em>vocabulary</em> and <strong>grammar</strong> of your exam.</h1>
+        <p class="lead">
+          Pick your exam and level (Cambridge B1, B2 or C1, EOI, Aptis, Linguaskill, TOEFL, IELTS) and the themes you
+          find hardest. Pipas English gives you exercises like the real ones and adjusts the difficulty as you get answers right.
+        </p>
+        <div class="cta">
+          <a class="button" href="#descargar">Coming soon to Google Play and the browser</a>
+          <span class="muted">Free during launch · No ads</span>
+        </div>
+      </div>
+
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <div class="app-bar">🌻 Pipas English</div>
+          <div class="card" style="--c:#8f570c">
+            <span class="bubble">✈️</span>
+            <div><b>When we arrived, we ___ in at the hotel.</b><small>Multiple choice · Cambridge B1</small></div>
+          </div>
+          <div class="card" style="--c:#3f7d3a">
+            <span class="bubble">✓</span>
+            <div><b>checked</b><small>“check in” is the phrasal verb for registering at a hotel.</small></div>
+          </div>
+          <div class="card" style="--c:#b42318">
+            <span class="bubble">✗</span>
+            <div><b>entered</b><small>“Enter” takes no “in” and doesn't mean to register.</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona" class="steps">
+      <h2>How it works</h2>
+      <ol>
+        <li><span class="step-number">1</span><h3>Choose exam, level and themes</h3><p>One or several typical exam themes: travel, work, health, technology, environment…</p></li>
+        <li><span class="step-number">2</span><h3>Practise with exam-style exercises</h3><p>Four-option multiple choice, gaps you fill by typing, and word formation.</p></li>
+        <li><span class="step-number">3</span><h3>Learn from every answer</h3><p>Answers are marked at once, and each option is explained: why it is right or wrong.</p></li>
+      </ol>
+    </section>
+
+    <section id="funciones" class="features">
+      <h2>Everything you need, nothing more</h2>
+      <div class="grid">
+        <article><span class="icon">🎯</span><h3>Adaptive difficulty</h3><p>Within your level, exercises get easier or harder depending on how you do in each theme.</p></article>
+        <article><span class="icon">📚</span><h3>Exam vocabulary</h3><p>Collocations, phrasal verbs and word formation tied to the themes that keep coming up in the tests.</p></article>
+        <article><span class="icon">🔁</span><h3>Few repeats</h3><p>What you haven't seen comes first; a little revision of your mistakes helps it stick.</p></article>
+        <article><span class="icon">🔥</span><h3>Progress and streaks</h3><p>Your accuracy and estimated level per theme, and how many days in a row you have practised.</p></article>
+        <article><span class="icon">🔑</span><h3>No passwords</h3><p>Sign in with Google or your e-mail: we send you a code each time.</p></article>
+        <article><span class="icon">🌍</span><h3>Built to grow</h3><p>Today for Spanish speakers learning English; later, more interface languages and more subjects.</p></article>
+      </div>
+      <p class="languages muted">Dark mode · English and Español</p>
+    </section>
+
+    <section class="examples" id="para-quien">
+      <h2>Made at home, for home</h2>
+      <p class="section-intro muted">If I made <a href="https://recuerdame.lamaltesa.dev">Recuérdame</a> for myself, Pipas English is for my wife and my kids,
+      who love learning languages almost as much as eating sunflower seeds. It is made for those short moments when you don't know what to do with yourself:</p>
+      <ul class="chips">
+        <li style="--c:#8f570c">🚌 waiting for the bus</li>
+        <li style="--c:#3f7d3a">🛒 in the supermarket queue</li>
+        <li style="--c:#b42318">☕ with your coffee</li>
+        <li style="--c:#2563eb">🍳 while dinner cooks</li>
+        <li style="--c:#7c3aed">🩺 in the waiting room</li>
+        <li style="--c:#0d9488">🚗 as a passenger on a long drive</li>
+        <li style="--c:#ca8a04">🛋️ on the sofa, before bed</li>
+        <li style="--c:#db2777">🌻 with a handful of sunflower seeds</li>
+      </ul>
+      <p class="languages muted">Five minutes, a few questions, and on with your day.</p>
+    </section>
+
+    <section id="descargar" class="download">
+      <div class="download-card">
+        <img src="logo-mark.svg" alt="" width="72" height="72">
+        <h2>Pipas English is on its way</h2>
+        <p>We are testing it in a closed beta. Soon you will be able to install it from <b>Google Play</b> or use it right in your <b>browser</b>, with the same account.</p>
+        <p class="note">An app from the <a href="https://lamaltesa.dev" style="color:inherit">lamaltesa</a> factory.</p>
+      </div>
+    </section>
+
+    <section id="apoyar" class="support">
+      <div class="support-card">
+        <span class="support-icon" aria-hidden="true">☕</span>
+        <div>
+          <h2>Find it useful?</h2>
+          <p>Pipas English is free during launch and has no ads. I make it in my spare time: if it helps you pass, you can buy me a coffee on Ko-fi.</p>
+          <a class="button button-kofi" href="https://ko-fi.com/fernandomunguia">Buy me a Ko-fi</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Made with love in Cantabria by Fernando Munguía Hoyo.</p>
+    <p>
+      <a href="https://ko-fi.com/fernandomunguia">Buy me a Ko-fi ☕</a>
+      · <a href="https://github.com/cmaltes">GitHub</a>
+    </p>
+    <p><a href="privacidad.html">Privacy</a> · <a href="condiciones.html">Terms</a> · <a href="borrar-cuenta.html">Delete account</a></p>
+  </footer>
+
+  <script>
+    // A language picked by hand wins over the browser's one from then on.
+    document.querySelectorAll('[data-lang]').forEach((link) =>
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('lang', link.dataset.lang); } catch {}
+      }),
+    );
+  </script>
+</body>
+</html>

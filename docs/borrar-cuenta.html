@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Send the browser to its own language, unless one was picked by hand (see the end of the page).
+    (() => {
+      const langs = ["es"];
+      let lang = null;
+      try { lang = localStorage.getItem('lang'); } catch {}
+      if (!lang) lang = (navigator.languages || [navigator.language]).map((l) => (l || '').slice(0, 2).toLowerCase())
+        .find((l) => l === 'en' || langs.includes(l));
+      if (langs.includes(lang)) location.replace(lang + '/' + location.pathname.split('/').pop() + location.search + location.hash);
+    })();
+  </script>
+  <title>Delete your account · Pipas English</title>
+  <meta name="description" content="How to delete your Pipas English account and all your data, from the app or by e-mail.">
+  <meta name="theme-color" content="#8f570c">
+  <meta property="og:title" content="Delete your account · Pipas English">
+  <meta property="og:description" content="How to delete your Pipas English account and all your data, from the app or by e-mail.">
+  <meta property="og:image" content="https://pipasenglish.lamaltesa.dev/icon-512.png">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://pipasenglish.lamaltesa.dev/borrar-cuenta.html">
+  <link rel="alternate" hreflang="es" href="https://pipasenglish.lamaltesa.dev/es/borrar-cuenta.html">
+  <link rel="alternate" hreflang="x-default" href="https://pipasenglish.lamaltesa.dev/borrar-cuenta.html">
+  <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="logo-mark.svg" alt="" width="36" height="36">
+      <span>Pipas English</span>
+    </a>
+    <div class="topbar-end">
+      
+      <details class="lang">
+        <summary aria-label="Language">🌐 EN</summary>
+        <ul><li><a href="borrar-cuenta.html" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a></li><li><a href="es/borrar-cuenta.html" hreflang="es" lang="es" data-lang="es">Español</a></li></ul>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal">
+      <h1>Delete your account</h1>
+      <p class="updated">Pipas English, by Fernando Munguía Hoyo · Last updated: 18 October 2026</p>
+
+      <p>You can delete your Pipas English account and all your data whenever you want, in two ways.</p>
+
+      <h2>From the app</h2>
+      <ol>
+        <li>Open Pipas English and sign in.</li>
+        <li>On the home screen tap <b>Delete my account</b> and confirm.</li>
+      </ol>
+      <p>It is deleted at once and you are signed out.</p>
+
+      <h2>Without the app, by e-mail</h2>
+      <p>If you no longer have the app installed, write to
+      <a href="mailto:info@lamaltesa.dev?subject=Delete%20my%20Pipas%20English%20account">info@lamaltesa.dev</a>
+      from the e-mail address you use in Pipas English, with the subject “Delete my account”. Your account and data will be
+      deleted within 30 days at most and you will get a reply when it is done.</p>
+
+      <h2>What is deleted</h2>
+      <ul>
+        <li>Your account: name, e-mail address and user identifier.</li>
+        <li>Your preferences (exam, level and themes), your answers and your estimated level per theme.</li>
+      </ul>
+      <p>No copies of your data are kept after deletion.</p>
+
+      <p>More information in the <a href="privacidad.html">privacy policy</a>.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Made with love in Cantabria by Fernando Munguía Hoyo.</p>
+    <p>
+      <a href="https://ko-fi.com/fernandomunguia">Buy me a Ko-fi ☕</a>
+      · <a href="https://github.com/cmaltes">GitHub</a>
+    </p>
+    <p><a href="privacidad.html">Privacy</a> · <a href="condiciones.html">Terms</a> · <a href="borrar-cuenta.html">Delete account</a></p>
+  </footer>
+
+  <script>
+    // A language picked by hand wins over the browser's one from then on.
+    document.querySelectorAll('[data-lang]').forEach((link) =>
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('lang', link.dataset.lang); } catch {}
+      }),
+    );
+  </script>
+</body>
+</html>

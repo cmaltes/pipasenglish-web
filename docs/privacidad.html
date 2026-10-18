@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Send the browser to its own language, unless one was picked by hand (see the end of the page).
+    (() => {
+      const langs = ["es"];
+      let lang = null;
+      try { lang = localStorage.getItem('lang'); } catch {}
+      if (!lang) lang = (navigator.languages || [navigator.language]).map((l) => (l || '').slice(0, 2).toLowerCase())
+        .find((l) => l === 'en' || langs.includes(l));
+      if (langs.includes(lang)) location.replace(lang + '/' + location.pathname.split('/').pop() + location.search + location.hash);
+    })();
+  </script>
+  <title>Privacy policy · Pipas English</title>
+  <meta name="description" content="What data Pipas English uses, what for, and how to delete it.">
+  <meta name="theme-color" content="#8f570c">
+  <meta property="og:title" content="Privacy policy · Pipas English">
+  <meta property="og:description" content="What data Pipas English uses, what for, and how to delete it.">
+  <meta property="og:image" content="https://pipasenglish.lamaltesa.dev/icon-512.png">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://pipasenglish.lamaltesa.dev/privacidad.html">
+  <link rel="alternate" hreflang="es" href="https://pipasenglish.lamaltesa.dev/es/privacidad.html">
+  <link rel="alternate" hreflang="x-default" href="https://pipasenglish.lamaltesa.dev/privacidad.html">
+  <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="logo-mark.svg" alt="" width="36" height="36">
+      <span>Pipas English</span>
+    </a>
+    <div class="topbar-end">
+      
+      <details class="lang">
+        <summary aria-label="Language">🌐 EN</summary>
+        <ul><li><a href="privacidad.html" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a></li><li><a href="es/privacidad.html" hreflang="es" lang="es" data-lang="es">Español</a></li></ul>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal">
+      <h1>Privacy policy</h1>
+      <p class="updated">Last updated: 18 October 2026 · This is a translation; if in doubt, the
+      <a href="es/privacidad.html">Spanish version</a> prevails.</p>
+
+      <p>Pipas English is an app to practise English vocabulary and grammar for certification exams, made by one person.
+      This page explains what data it uses, what for, and what you can do with it. The short version: only what is needed
+      for the app to work and remember your progress is stored; there are no ads, no analytics, and no data is sold.</p>
+
+      <h2>Controller</h2>
+      <p>Fernando Munguía Hoyo, Cantabria (Spain). Contact: <a href="mailto:info@lamaltesa.dev">info@lamaltesa.dev</a>.</p>
+
+      <h2>What data is processed</h2>
+      <ul>
+        <li><b>Your account</b>: your name, your e-mail address and a user identifier. If you sign in with Google, only your e-mail
+          and name are received (scopes <code>email</code>, <code>profile</code> and <code>openid</code>); never your Google password. If you sign in with your
+          e-mail there is no password: a one-time code is sent to you each time.</li>
+        <li><b>Your preferences</b>: the exam, level and themes you choose, and the interface language.</li>
+        <li><b>Your progress</b>: each question you answer (question identifier, whether you got it right, when and, where applicable, how long it took)
+          and your estimated level in each theme. It is used to adapt the difficulty, avoid repeats and show you your statistics and streak.</li>
+      </ul>
+      <p>The app does not use your location, microphone, contacts or photos.</p>
+
+      <h2>What it is used for</h2>
+      <p>Only to provide the service you ask for: signing in, saving your progress, choosing your next exercises and showing your statistics.
+      Also, in aggregate and without identifying you, to know which themes need more questions (how much of the question bank each person has seen).
+      The legal basis is performance of the service you accept by using the app.</p>
+
+      <h2>Sign-in with Google</h2>
+      <p>Pipas English's use of information received from Google APIs adheres to the
+      <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.
+      Your e-mail and name are only used to create your account and show you who you are; they are not transferred to third parties, not used for advertising,
+      and no human reads them unless you allow it or it is required for security or by law. You can revoke access in
+      <a href="https://myaccount.google.com/permissions">your Google account</a>.</p>
+
+      <h2>Who else sees it</h2>
+      <ul>
+        <li>Nobody else sees your progress. There are no public profiles or friends.</li>
+        <li><b>Providers that host or transmit the data</b>, acting as processors:
+          <ul>
+            <li>Amazon Web Services (Cognito, AppSync, DynamoDB and SES): accounts, database and e-mailing of the codes, in the Stockholm (EU) region.</li>
+            <li>Google: sign-in with Google.</li>
+          </ul>
+          Some of these providers may process data outside the EU under the EU-US Data Privacy Framework or standard contractual clauses.</li>
+      </ul>
+      <p>No data is sold or passed to anyone else, or used for advertising.</p>
+
+      <h2>How long it is kept</h2>
+      <p>For as long as you have an account. From the app (home screen → Delete my account) you can delete your account and all your data at any time,
+      and it is removed immediately. If you no longer have the app, see <a href="borrar-cuenta.html">how to delete your account by e-mail</a>.</p>
+
+      <h2>Your rights</h2>
+      <p>You can access, correct or delete your data, object to its processing, restrict it or ask for a copy by writing to
+      <a href="mailto:info@lamaltesa.dev">info@lamaltesa.dev</a>. If you think your rights have not been respected you can complain to the
+      <a href="https://www.aepd.es">Spanish Data Protection Agency</a>.</p>
+
+      <h2>Children</h2>
+      <p>The app is not aimed at children under 14.</p>
+
+      <h2>Changes</h2>
+      <p>If this policy changes it will be published here with its date and, if the change is significant, announced in the app.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Made with love in Cantabria by Fernando Munguía Hoyo.</p>
+    <p>
+      <a href="https://ko-fi.com/fernandomunguia">Buy me a Ko-fi ☕</a>
+      · <a href="https://github.com/cmaltes">GitHub</a>
+    </p>
+    <p><a href="privacidad.html">Privacy</a> · <a href="condiciones.html">Terms</a> · <a href="borrar-cuenta.html">Delete account</a></p>
+  </footer>
+
+  <script>
+    // A language picked by hand wins over the browser's one from then on.
+    document.querySelectorAll('[data-lang]').forEach((link) =>
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('lang', link.dataset.lang); } catch {}
+      }),
+    );
+  </script>
+</body>
+</html>
