@@ -6,6 +6,8 @@
   <script>
     // Send the browser to its own language, unless one was picked by hand (see the end of the page).
     (() => {
+      // ?lang=en always shows the English page (a stable link for stores and for sharing).
+      if (new URLSearchParams(location.search).get('lang') === 'en') return;
       const langs = ["es"];
       let lang = null;
       try { lang = localStorage.getItem('lang'); } catch {}
@@ -66,7 +68,7 @@
           e-mail there is no password: a one-time code is sent to you each time.</li>
         <li><b>Your preferences</b>: the exam, level and themes you choose, and the interface language.</li>
         <li><b>Your progress</b>: each question you answer (question identifier, whether you got it right, when and, where applicable, how long it took)
-          and your estimated level in each theme. It is used to adapt the difficulty, avoid repeats and show you your statistics and streak.</li>
+          your estimated level in each theme, and your achievement counters, badges and avatar. It is used to adapt the difficulty, avoid repeats and show you your statistics and streak.</li>
         <li><b>Friends (optional)</b>: if you open the Friends screen, your name, avatar, streak, seeds eaten, points of the week and badges
           are published so that your friends can see them, along with the list of your friends. Invitation links hold your name and avatar for 7 days.</li>
         <li><b>Doubts about answers (optional)</b>: if you press “I think this answer is wrong”, the question identifier, what you chose and your comment are sent to the administrator.</li>

@@ -6,6 +6,8 @@
   <script>
     // Send the browser to its own language, unless one was picked by hand (see the end of the page).
     (() => {
+      // ?lang=en always shows the English page (a stable link for stores and for sharing).
+      if (new URLSearchParams(location.search).get('lang') === 'en') return;
       const langs = ["es"];
       let lang = null;
       try { lang = localStorage.getItem('lang'); } catch {}
