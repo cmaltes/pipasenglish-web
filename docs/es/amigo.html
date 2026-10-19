@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Te han invitado a Pipas English</title>
+  <meta name="description" content="Alguien quiere ser tu amigo en Pipas English.">
+  <meta name="theme-color" content="#0d9488">
+  <meta property="og:title" content="Te han invitado a Pipas English">
+  <meta property="og:description" content="Alguien quiere ser tu amigo en Pipas English.">
+  <meta property="og:image" content="https://pipasenglish.lamaltesa.dev/icon-512.png">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://pipasenglish.lamaltesa.dev/amigo.html">
+  <link rel="alternate" hreflang="es" href="https://pipasenglish.lamaltesa.dev/es/amigo.html">
+  <link rel="alternate" hreflang="x-default" href="https://pipasenglish.lamaltesa.dev/amigo.html">
+  <link rel="icon" href="../logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="../logo-mark.svg" alt="" width="36" height="36">
+      <span>Pipas English</span>
+    </a>
+    <div class="topbar-end">
+      
+      <details class="lang">
+        <summary aria-label="Idioma">🌐 ES</summary>
+        <ul><li><a href="../amigo.html" hreflang="en" lang="en" data-lang="en">English</a></li><li><a href="../es/amigo.html" hreflang="es" lang="es" data-lang="es" aria-current="true">Español</a></li></ul>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal">
+      <h1>Te han invitado a Pipas English</h1>
+      <p>Alguien quiere ser tu amigo para practicar idiomas juntos. Este es el código de la invitación:</p>
+      <p><span class="invite-code" id="code">——————</span></p>
+      <ol class="invite-steps">
+        <li><b>¿Ya tienes la app?</b> Ábrela, ve a <b>Amigos</b> y escribe el código en «¿Te han enviado un código?».</li>
+        <li><b>¿No la tienes?</b> Instálala, entra (con Google o con tu correo) y escribe el código del mismo modo.</li>
+      </ol>
+      <p class="updated">La invitación caduca a los 7 días.</p>
+    </section>
+    <style>
+      .invite-code {
+        display: inline-block; margin: 0.4em 0 0.8em; padding: 0.3em 0.8em; border-radius: 14px;
+        background: #f0fdfa; color: #0f766e; font-size: 2rem; font-weight: 900; letter-spacing: 0.18em;
+      }
+      .invite-steps li { margin: 0.5em 0; }
+    </style>
+    <script>
+      // Android opens these links straight in the app (App Links); this page is only seen without it.
+      const code = new URLSearchParams(location.search).get('c');
+      if (code) document.getElementById('code').textContent = code.toUpperCase().replace(/[^0-9A-Z]/g, '');
+    </script>
+
+  </main>
+
+  <footer>
+    <p>Hecho con cariño en Cantabria por Fernando Munguía Hoyo.</p>
+    <p>
+      <a href="https://ko-fi.com/fernandomunguia">Invítame a un Ko-fi ☕</a>
+      · <a href="https://github.com/cmaltes">GitHub</a>
+    </p>
+    <p><a href="privacidad.html">Privacidad</a> · <a href="condiciones.html">Condiciones</a> · <a href="borrar-cuenta.html">Borrar cuenta</a></p>
+  </footer>
+
+  <script>
+    // A language picked by hand wins over the browser's one from then on.
+    document.querySelectorAll('[data-lang]').forEach((link) =>
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('lang', link.dataset.lang); } catch {}
+      }),
+    );
+  </script>
+</body>
+</html>

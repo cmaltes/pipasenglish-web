@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "dev.lamaltesa.pipasenglish",
+      "sha256_cert_fingerprints": ["36:A0:E4:09:68:F7:95:09:DF:C6:BE:6B:97:F5:46:02:B2:2F:43:47:3D:5E:A8:58:3B:AA:5C:7D:7B:AA:0A:44"]
+    }
+  }
+]

@@ -1,31 +1,31 @@
 :root {
-  --bg: #f3e6cf;
-  --surface: #fbf4e6;
-  --text: #22160e;
-  --muted: #6b5a45;
-  --border: #c9b79a;
-  --primary: #8f570c;
-  --primary-strong: #6e420a;
-  --primary-soft: #ecd9b4;
-  --on-primary: #fbf4e6;
-  --accent: #22160e;
-  --shadow: 0 20px 50px -20px rgba(143, 87, 12, 0.35);
+  --bg: #f6fbfa;
+  --surface: #ffffff;
+  --text: #0f1f1d;
+  --muted: #5b6b69;
+  --border: #dbe7e5;
+  --primary: #0d9488;
+  --primary-strong: #0f766e;
+  --primary-soft: #ccfbf1;
+  --on-primary: #ffffff;
+  --accent: #134e4a;
+  --shadow: 0 20px 50px -20px rgba(15, 118, 110, 0.35);
   --radius: 20px;
   color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #22160e;
-    --surface: #2e2016;
-    --text: #f3e6cf;
-    --muted: #c9b79a;
-    --border: #4a3828;
-    --primary: #e0a33a;
-    --primary-strong: #f0be63;
-    --primary-soft: #3a2a1d;
-    --on-primary: #22160e;
-    --accent: #f3e6cf;
+    --bg: #07100f;
+    --surface: #111b1a;
+    --text: #eef7f5;
+    --muted: #9fb1ae;
+    --border: #22302e;
+    --primary: #2dd4bf;
+    --primary-strong: #5eead4;
+    --primary-soft: #0f2e2b;
+    --on-primary: #042f2e;
+    --accent: #99f6e4;
     --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
     color-scheme: dark;
   }
@@ -152,7 +152,7 @@ section { padding: 72px 16px; max-width: 1120px; margin: 0 auto; }
 }
 .button:hover { transform: translateY(-2px); background: var(--primary-strong); }
 .button-small { padding: 8px 18px; font-size: 0.95rem; box-shadow: none; }
-.button-light { background: #ffffff; color: #8f570c; }
+.button-light { background: #ffffff; color: #0f766e; }
 .button-light:hover { background: #f0fdfa; }
 
 .invert { filter: brightness(0) invert(1); }
@@ -255,7 +255,7 @@ section { padding: 72px 16px; max-width: 1120px; margin: 0 auto; }
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: #8f570c;
+  background: #0d9488;
   color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
@@ -323,7 +323,7 @@ section { padding: 72px 16px; max-width: 1120px; margin: 0 auto; }
   margin: 0 auto;
   padding: 48px 32px;
   border-radius: 28px;
-  background: linear-gradient(145deg, #8f570c, #5c3908);
+  background: linear-gradient(145deg, #0d9488, #115e59);
   color: #ffffff;
   text-align: center;
   box-shadow: var(--shadow);
