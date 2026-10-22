@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    // Send the browser to its own language, unless one was picked by hand (see the end of the page).
+    (() => {
+      // ?lang=en always shows the English page (a stable link for stores and for sharing).
+      if (new URLSearchParams(location.search).get('lang') === 'en') return;
+      const langs = ["es"];
+      let lang = null;
+      try { lang = localStorage.getItem('lang'); } catch {}
+      if (!lang) lang = (navigator.languages || [navigator.language]).map((l) => (l || '').slice(0, 2).toLowerCase())
+        .find((l) => l === 'en' || langs.includes(l));
+      if (langs.includes(lang)) location.replace(lang + '/' + location.pathname.split('/').pop() + location.search + location.hash);
+    })();
+  </script>
+  <title>A friend challenges you on Pipas English</title>
+  <meta name="description" content="A friend has challenged you to answer the same questions they did.">
+  <meta name="theme-color" content="#0d9488">
+  <meta property="og:title" content="A friend challenges you on Pipas English">
+  <meta property="og:description" content="A friend has challenged you to answer the same questions they did.">
+  <meta property="og:image" content="https://pipasenglish.lamaltesa.dev/icon-512.png">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://pipasenglish.lamaltesa.dev/reto.html">
+  <link rel="alternate" hreflang="es" href="https://pipasenglish.lamaltesa.dev/es/reto.html">
+  <link rel="alternate" hreflang="x-default" href="https://pipasenglish.lamaltesa.dev/reto.html">
+  <link rel="icon" href="logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="logo-mark.svg" alt="" width="36" height="36">
+      <span>Pipas English</span>
+    </a>
+    <div class="topbar-end">
+      
+      <details class="lang">
+        <summary aria-label="Language">🌐 EN</summary>
+        <ul><li><a href="reto.html" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a></li><li><a href="es/reto.html" hreflang="es" lang="es" data-lang="es">Español</a></li></ul>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal">
+      <h1>A friend challenges you! 🌻</h1>
+      <p>They sent you some Pipas English seeds to see if you do as well as they did.</p>
+      <ol class="invite-steps">
+        <li><b>Already have the app?</b> Open this link on your phone and the challenge will open.</li>
+        <li><b>Don't have it?</b> Install it, sign in (with Google or your e-mail) and open the link again.</li>
+      </ol>
+    </section>
+    <style>
+      .invite-steps li { margin: 0.5em 0; }
+    </style>
+
+  </main>
+
+  <footer>
+    <p>Made with love in Cantabria by Fernando Munguía Hoyo.</p>
+    <p>
+      <a href="https://ko-fi.com/fernandomunguia">Buy me a Ko-fi ☕</a>
+      · <a href="https://github.com/cmaltes">GitHub</a>
+    </p>
+    <p><a href="privacidad.html">Privacy</a> · <a href="condiciones.html">Terms</a> · <a href="borrar-cuenta.html">Delete account</a></p>
+  </footer>
+
+  <script>
+    // A language picked by hand wins over the browser's one from then on.
+    document.querySelectorAll('[data-lang]').forEach((link) =>
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('lang', link.dataset.lang); } catch {}
+      }),
+    );
+  </script>
+</body>
+</html>

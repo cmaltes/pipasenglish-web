@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Un amigo te reta en Pipas English</title>
+  <meta name="description" content="Un amigo te ha retado a responder las mismas preguntas que él.">
+  <meta name="theme-color" content="#0d9488">
+  <meta property="og:title" content="Un amigo te reta en Pipas English">
+  <meta property="og:description" content="Un amigo te ha retado a responder las mismas preguntas que él.">
+  <meta property="og:image" content="https://pipasenglish.lamaltesa.dev/icon-512.png">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="en" href="https://pipasenglish.lamaltesa.dev/reto.html">
+  <link rel="alternate" hreflang="es" href="https://pipasenglish.lamaltesa.dev/es/reto.html">
+  <link rel="alternate" hreflang="x-default" href="https://pipasenglish.lamaltesa.dev/reto.html">
+  <link rel="icon" href="../logo-mark.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="../logo-mark.svg" alt="" width="36" height="36">
+      <span>Pipas English</span>
+    </a>
+    <div class="topbar-end">
+      
+      <details class="lang">
+        <summary aria-label="Idioma">🌐 ES</summary>
+        <ul><li><a href="../reto.html" hreflang="en" lang="en" data-lang="en">English</a></li><li><a href="../es/reto.html" hreflang="es" lang="es" data-lang="es" aria-current="true">Español</a></li></ul>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal">
+      <h1>¡Un amigo te reta! 🌻</h1>
+      <p>Te ha enviado unas pipas de Pipas English para ver si las aciertas tan bien como él.</p>
+      <ol class="invite-steps">
+        <li><b>¿Ya tienes la app?</b> Abre este enlace desde el móvil y se abrirá el reto.</li>
+        <li><b>¿No la tienes?</b> Instálala, entra (con Google o con tu correo) y vuelve a abrir el enlace.</li>
+      </ol>
+    </section>
+    <style>
+      .invite-steps li { margin: 0.5em 0; }
+    </style>
+
+  </main>
+
+  <footer>
+    <p>Hecho con cariño en Cantabria por Fernando Munguía Hoyo.</p>
+    <p>
+      <a href="https://ko-fi.com/fernandomunguia">Invítame a un Ko-fi ☕</a>
+      · <a href="https://github.com/cmaltes">GitHub</a>
+    </p>
+    <p><a href="privacidad.html">Privacidad</a> · <a href="condiciones.html">Condiciones</a> · <a href="borrar-cuenta.html">Borrar cuenta</a></p>
+  </footer>
+
+  <script>
+    // A language picked by hand wins over the browser's one from then on.
+    document.querySelectorAll('[data-lang]').forEach((link) =>
+      link.addEventListener('click', () => {
+        try { localStorage.setItem('lang', link.dataset.lang); } catch {}
+      }),
+    );
+  </script>
+</body>
+</html>
